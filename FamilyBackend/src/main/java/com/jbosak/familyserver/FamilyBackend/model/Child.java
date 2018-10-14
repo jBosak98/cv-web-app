@@ -17,6 +17,12 @@ public class Child {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String firstName;
+    private String lastName;
+    private int pesel;
+    private Date dateOfBirth;
+    private int gender;
+
     public Father getFather() {
         return father;
     }
@@ -29,11 +35,7 @@ public class Child {
     @JsonIgnoreProperties("children")
     private Father father;
 
-    private String firstName;
-    private String lastName;
-    private int pesel;
-    private Date dateOfBirth;
-    private int gender;
+
 
     public Child(Father father, String firstName, String lastName, int pesel, Date dateOfBirth, int gender) {
         this.father = father;
