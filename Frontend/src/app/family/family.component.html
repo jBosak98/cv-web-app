@@ -1,0 +1,13 @@
+<h1>Families</h1>
+
+<ul>
+  <li *ngFor="let family of families$">
+    <a routerLink="/details/{{family.id}}">{{ family.firstName }}  {{ family.lastName }}</a>
+
+    <ul>
+      <li>PESEL:  {{ family.pesel }}</li>
+      <li>DATA URODZENIA:  {{ family.dateOfBirth }}</li>
+      <!-- <li><a href="http://{{ user.website }}">{{ user.website }}</a></li> -->
+    </ul>
+  </li>
+</ul>

@@ -12,24 +12,23 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 //@Controller
-public class FatherController {
+public class restController {
     private ChildRepository childRepository;
     private FatherRepository fatherRepository;
 
-    public FatherController(ChildRepository childRepository, FatherRepository fatherRepository) {
+    public restController(ChildRepository childRepository, FatherRepository fatherRepository) {
         this.childRepository = childRepository;
         this.fatherRepository = fatherRepository;
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/children", method = RequestMethod.GET)
     public ResponseEntity<List<Child>> getAllChildren(){
         ArrayList<Child> children= new ArrayList<>();
@@ -39,6 +38,8 @@ public class FatherController {
         return ResponseEntity.status(HttpStatus.OK).body(children);
     }
 
+
+        @CrossOrigin
         @RequestMapping(value = "/fathers", method = RequestMethod.GET)
     public ResponseEntity<List<Father>> getAllFathers(){
             ArrayList<Father> fathers = new ArrayList<>();
@@ -48,18 +49,21 @@ public class FatherController {
         return ResponseEntity.status(HttpStatus.OK).body(fathers);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/father/{id}", method = RequestMethod.GET)
     public ResponseEntity findFatherById(@PathVariable("id") long id){
         Optional<Father> father = fatherRepository.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(father);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/children/{id}", method = RequestMethod.GET)
     public ResponseEntity findChildById(@PathVariable("id") long id){
         Optional<Child> child = childRepository.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(child);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "father/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity updateFatherById(@PathVariable("id") long id, @RequestBody @Valid Father father,Errors errors ){
         if (errors.hasErrors()){
@@ -75,6 +79,7 @@ public class FatherController {
         return ResponseEntity.status(HttpStatus.OK).body("");
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/father/add",method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity addFather(@RequestBody @Valid Father father, Errors errors){
         if (errors.hasErrors()){

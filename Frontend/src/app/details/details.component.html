@@ -1,0 +1,40 @@
+<div>
+<ul>
+  <li>
+    <h1>{{ family$.firstName }}  {{ family$.lastName }}</h1>
+    <table>
+      <tr>
+        <td>PESEL</td>
+        <th>{{family$.pesel}}</th>
+      </tr>
+      <tr>
+        <td>DATA URODZENIA</td>
+        <th>{{family$.dateOfBirth}}</th>
+        </tr>
+    </table>
+  </li>
+</ul>
+</div>
+
+
+<ul>
+  <table>
+   
+ 
+  <li *ngFor="let child of family$.children">
+    <tr>
+    <td>IMIE</td><th>{{child.firstName}}</th>
+    </tr>
+    <tr>
+        <td>NAZWISKO</td><th>{{child.lastName}}</th>
+    </tr>
+    <tr>
+        <td>PESEL</td><th>{{child.pesel}}</th>
+    </tr>
+    <tr>
+        <td>DATA URODZENIA</td><th>{{child.dateOfBirth}}</th>
+    </tr>
+  </li>
+</table>
+
+</ul>
