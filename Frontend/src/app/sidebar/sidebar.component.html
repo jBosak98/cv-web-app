@@ -2,15 +2,15 @@
 <nav>
   <ul>
     <li>
-      <a routerLink="">
+      <a routerLink="" [class.activated]="currentUrl == '/'">
         <i class="material-icons">supervised_user_circle</i>
       </a>
     </li>
     <li>
-        <a routerLink="search">
+        <a routerLink="search" [class.activated]="currentUrl == '/search'">
           <i class="material-icons">search</i>
         </a>
-        <a routerLink="create">
+        <a routerLink="create" [class.activated]="currentUrl == '/create'">
           <i class="material-icons">add_circle</i>
         </a>
       </li>

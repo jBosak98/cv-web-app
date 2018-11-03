@@ -1,12 +1,14 @@
 nav {
+    position: fixed;
     background: #2D2E2E;
     height: 100%;
 
     ul {
+        width: inherit;
         list-style-type: none;
         padding: 0;
         margin: 0;
-        position: fixed;
+        
 
 
         li {

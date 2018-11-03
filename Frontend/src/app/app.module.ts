@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateChildListComponent } from './create-child-list/create-child-list.component';
 
 import { CreateChildComponent } from './create-child/create-child.component';
+import { CreateFatherComponent } from './create-father/create-father.component';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 
 
@@ -26,6 +27,7 @@ import { CreateChildComponent } from './create-child/create-child.component';
     CreateFamilyComponent,
     CreateChildComponent,
     CreateChildListComponent,
+    CreateFatherComponent,
     
 
   ],
