@@ -14,7 +14,8 @@ import { CreateChildListComponent } from './create-child-list/create-child-list.
 
 import { CreateChildComponent } from './create-child/create-child.component';
 import { CreateFatherComponent } from './create-father/create-father.component';
-// import {MatSidenavModule} from '@angular/material/sidenav';
+import { SingleControlComponent } from './single-control/single-control.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CreateFatherComponent } from './create-father/create-father.component';
     CreateChildComponent,
     CreateChildListComponent,
     CreateFatherComponent,
+    SingleControlComponent,
     
 
   ],
@@ -35,7 +37,9 @@ import { CreateFatherComponent } from './create-father/create-father.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [CreateChildListComponent],
   bootstrap: [AppComponent]

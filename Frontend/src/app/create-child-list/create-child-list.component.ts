@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateChildComponent} from '../create-child/create-child.component';
-import { Observable } from 'rxjs';
-import { delay, concat } from 'rxjs/operators';
-import { of } from 'rxjs';
 import { Child } from '../create-child/create-child.component';
 
 @Component({

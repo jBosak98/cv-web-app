@@ -1,19 +1,45 @@
 <div>
-  <h1>CHILD_COMPONENT</h1>
   
-    <!-- <form novalidate>
-        <fieldset>
-          <div class="form-group">
-            <label>First Name</label>
-              <input type="text"
-                class="form-control">
-          </div>
+  <li>
+    <tr>
+  <h1>CHILD</h1>
+  <form >
+      <fieldset>
+        <app-single-control 
+          [control]="form.controls['firstName']" 
+          [label]="'firstName'">        
+        </app-single-control>
   
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text"
-                  class="form-control">
-          </div>
-        </fieldset>
-        </form> -->
+        <app-single-control 
+          [control]="form.controls['lastName']" 
+          [label]="'lastName'">        
+          </app-single-control>
+        <app-single-control 
+          [control]="form.controls['pesel']" 
+          [label]="'pesel'" 
+          [$typeInput]="'number'">        
+          </app-single-control>
+          <app-single-control 
+            [control]="form.controls['dob']" 
+            [label]="'Date of birth'" 
+            [$typeInput]="'Date'">
+            </app-single-control>
+            <div>
+            
+              MALE: <input type="radio" name="gender" [formControl]="control" class="form-control">
+
+              FEMALE: <input type="radio" name="gender" [formControl]="control" class="form-control">
+            
+            </div>
+            <!-- <app-single-control 
+            [control]="form.controls['gender']" 
+            [label]="'gender'" 
+            [$typeInput]="'submit'">
+            </app-single-control>
+        -->
+
+       </fieldset> 
+    </form>
+  </tr>
+  </li>
 </div>

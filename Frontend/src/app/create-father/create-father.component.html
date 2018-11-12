@@ -1,26 +1,30 @@
+<div>
 <li>
   <tr>
 <h1>FATHER</h1>
-<form novalidate>
+<form >
     <fieldset>
-      <div>
-        <label>First Name</label>
-          <input type="text"
-            class="form-control">
-      </div>
+      <app-single-control 
+        [control]="form.controls['firstName']" 
+        [label]="'firstName'">        
+      </app-single-control>
 
-      <div>
-        <label>Last Name</label>
-        <input type="text"
-              class="form-control">
-      </div>
-    </fieldset>
-
-    <div>
-      <label>Email</label>
-      <input type="email"
-            class="form-control">
-    </div>
+      <app-single-control 
+        [control]="form.controls['lastName']" 
+        [label]="'lastName'">        
+        </app-single-control>
+      <app-single-control 
+        [control]="form.controls['pesel']" 
+        [label]="'pesel'" 
+        [$typeInput]="'number'">        
+        </app-single-control>
+        <app-single-control 
+          [control]="form.controls['dob']" 
+          [label]="'Date of birth'" 
+          [$typeInput]="'Date'">        
+        </app-single-control>
+     </fieldset> 
   </form>
 </tr>
 </li>
+</div>

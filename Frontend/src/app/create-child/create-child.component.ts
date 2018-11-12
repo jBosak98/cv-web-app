@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,7 +9,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create-child.component.scss']
 })
 export class CreateChildComponent implements OnInit {
-  constructor() { 
+
+  public form:FormGroup
+
+  constructor(private formBuilder: FormBuilder) {
+    this.form = formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      pesel: ['', Validators.required],
+      dob: ['', Validators.required],
+      gender: ['', Validators.required]
+    }) 
   }
 
   ngOnInit() {
